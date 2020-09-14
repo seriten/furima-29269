@@ -6,18 +6,19 @@
 | first_name      | string | nill: false|
 | kana_1          | string | nill: false|
 | kana_2          | string | nill: false|
-| birthday        | string | nill: false|
+| birthday        | date   | nill: false|
 | email           | string | nill: false|
 | nickname        | string | nill: false|
 | password        | string | nill: false|
 
 ## Association
 
+- has_one :buy
 - has_many :items
 - has_many :comments
 
 ## item テーブル
-
+| title       | string | nill: false                    |
 | price       | int    | nill: false                    |
 | text        | string | nill: false                    |
 | status      | int    | nill: false                    |
@@ -53,6 +54,7 @@
 
 ## Association
 
+- belongs_to :user
 - belongs_to :item
 - has_one :deliver
 
