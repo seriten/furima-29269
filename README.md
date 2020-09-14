@@ -4,8 +4,8 @@
 
 | family_name     | string | nill: false|
 | first_name      | string | nill: false|
-| kana_1          | string | nill: false|
-| kana_2          | string | nill: false|
+| family_kana     | string | nill: false|
+| first_kana      | string | nill: false|
 | birthday        | date   | nill: false|
 | email           | string | nill: false|
 | nickname        | string | nill: false|
@@ -13,7 +13,7 @@
 
 ## Association
 
-- has_one :buy
+- has_many :buy
 - has_many :items
 - has_many :comments
 
@@ -23,9 +23,9 @@
 | text        | string | nill: false                    |
 | status      | int    | nill: false                    |
 | deliver_fee | int    | nill: false                    |
-| lead_time   | int    | nill: false, foreign_key: true |
-| shop_from   | int    | nill: false, foreign_key: true |
-| category    | int    | nill: false, foreign_key: true |
+| lead_time   | int    | nill: false                    |
+| shop_from   | int    | nill: false                    |
+| category    | int    | nill: false                    |
 | user_id     | int    | nill: false, foreign_key: true |
 
 ## Association
@@ -48,8 +48,8 @@
 
 ## buys　テーブル
 
-| user_id     | int    | nill: false |
-| item_id     | int    | nill: false |
+| user_id  | int  | nill: false, foreign_key: true  |
+| item_id  | int  | nill: false, foreign_key: true  |
 
 
 ## Association
@@ -61,7 +61,7 @@
 ## delivers　テーブル
 
 | postal_code | string | nill: false, foreign_key: true |
-| prefecture  | string | nill: false, foreign_key: true |
+| prefecture  | int    | nill: false, foreign_key: true |
 | city        | string | nill: false, foreign_key: true |
 | add1        | string | nill: false, foreign_key: true |
 | add2        | string |                                |
