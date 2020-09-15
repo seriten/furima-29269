@@ -13,7 +13,7 @@
 
 ## Association
 
-- has_many :buyss
+- has_many :buys
 - has_many :items
 - has_many :comments
 
@@ -36,7 +36,6 @@
 
 ## comments テーブル
 
-| id          | int    | nill: false |
 | user_id     | int    | nill: false |
 | item_id     | int    | nill: false |
 | text        | string | nill: false |
@@ -60,10 +59,10 @@
 
 ## delivers　テーブル
 
-| postal_code   | string | nill: false, foreign_key: true |
-| prefecture_id | int    | nill: false, foreign_key: true |
-| city          | string | nill: false, foreign_key: true |
-| address       | string | nill: false, foreign_key: true |
+| postal_code   | string | nill: false                    |
+| prefecture_id | int    | nill: false                    |
+| city          | string | nill: false                    |
+| address       | string | nill: false                    |
 | building      | string |                                |
 | tel           | string | nill: false                    |
 | buy_id        | int    | nill: false, foreign_key: true |
