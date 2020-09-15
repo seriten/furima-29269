@@ -13,7 +13,7 @@
 
 ## Association
 
-- has_many :buy
+- has_many :buys
 - has_many :items
 - has_many :comments
 
