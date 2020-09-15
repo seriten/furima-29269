@@ -18,15 +18,15 @@
 - has_many :comments
 
 ## item テーブル
-| title       | string | nill: false                    |
-| price       | int    | nill: false                    |
-| text        | string | nill: false                    |
-| status      | int    | nill: false                    |
-| deliver_fee | int    | nill: false                    |
-| lead_time   | int    | nill: false                    |
-| shop_from   | int    | nill: false                    |
-| category    | int    | nill: false                    |
-| user_id     | int    | nill: false, foreign_key: true |
+| title          | string | nill: false                    |
+| price          | int    | nill: false                    |
+| text           | string | nill: false                    |
+| status_id      | int    | nill: false                    |
+| deliver_fee_id | int    | nill: false                    |
+| lead_time_id   | int    | nill: false                    |
+| shop_from_id   | int    | nill: false                    |
+| category_id    | int    | nill: false                    |
+| user_id        | int    | nill: false, foreign_key: true |
 
 ## Association
 
@@ -60,13 +60,13 @@
 
 ## delivers　テーブル
 
-| postal_code | string | nill: false, foreign_key: true |
-| prefecture  | int    | nill: false, foreign_key: true |
-| city        | string | nill: false, foreign_key: true |
-| add1        | string | nill: false, foreign_key: true |
-| add2        | string |                                |
-| tel         | string | nill: false                    |
-| buy_id      | int    | nill: false, foreign_key: true |
+| postal_code   | string | nill: false, foreign_key: true |
+| prefecture_id | int    | nill: false, foreign_key: true |
+| city          | string | nill: false, foreign_key: true |
+| address       | string | nill: false, foreign_key: true |
+| building      | string |                                |
+| tel           | string | nill: false                    |
+| buy_id        | int    | nill: false, foreign_key: true |
 
 ## Association
 
