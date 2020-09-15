@@ -13,14 +13,14 @@
 
 ## Association
 
-- has_many :buys
+- has_many :buyss
 - has_many :items
 - has_many :comments
 
 ## item テーブル
 | title          | string | nill: false                    |
 | price          | int    | nill: false                    |
-| text           | string | nill: false                    |
+| text           | text   | nill: false                    |
 | status_id      | int    | nill: false                    |
 | deliver_fee_id | int    | nill: false                    |
 | lead_time_id   | int    | nill: false                    |
