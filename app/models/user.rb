@@ -10,8 +10,16 @@ class User < ApplicationRecord
                     length: { maximum: 255 },
                     uniqueness: { case_sensitive: false },
                     format: { with: VALID_EMAIL_REGEX }
+
   VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/i
   validates :password, confirmation: true,
                        length: { minimum: 6 },
                        format: { with: VALID_PASSWORD_REGEX }
+
+   validates :family_name, presence: true,format: {with: /\A[ぁ-んァ-ン一-龥]/ }  
+   validates :family_kana, presence: true,format: {with: /\A[ァ-ヶー－]+\z/ } 
+   validates :first_name, presence: true, format: {with: /\A[ぁ-んァ-ン一-龥]/ } 
+   validates :first_kana, presence: true,format: {with: /\A[ァ-ヶー－]+\z/ } 
+   validates :birthday, presence: true
+                   
 end

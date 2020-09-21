@@ -36,6 +36,11 @@ describe User do
         @user.valid?
         expect(@user.errors.full_messages).to include('Eメールを入力してください')
       end
+      it 'メールアドレスは@を含む必要があること' do
+        @user.email = 'asdfghjkl.com'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Eメールは不正な値です')
+      end
       it '重複したemailが存在する場合登録できない' do
         @user.save
         another_user = FactoryBot.build(:user)
@@ -58,6 +63,35 @@ describe User do
         @user.password_confirmation = ''
         @user.valid?
         expect(@user.errors.full_messages).to include('パスワード（確認用）とパスワードの入力が一致しません')
+      end
+      it "family_nameがない場合は登録できないこと" do
+        @user.family_name = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Family nameを入力してください')
+      end
+
+      it "family_kanaがない場合は登録できないこと" do
+        @user.family_kana = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Family kanaを入力してください')
+      end
+
+      it "first_nameがない場合は登録できないこと" do
+        @user.first_name = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include('First nameを入力してください')
+      end
+
+      it "first_name_kanaがない場合は登録できないこと" do
+        @user.first_kana = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include('First kanaを入力してください')
+      end
+
+      it "birthdayがない場合は登録できないこと" do
+        @user.birthday = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Birthdayを入力してください')
       end
     end
   end
