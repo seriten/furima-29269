@@ -16,7 +16,7 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   validates :title, presence: true
-  validates :price, presence: true
+  validates :price, presence: true,format:{with: /\A[0-9]{300,9999999}+\z/ }
   validates :image, presence: true
   validates :text,  presence: true
   validates :category_id, presence: true
