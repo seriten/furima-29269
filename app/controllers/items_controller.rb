@@ -9,4 +9,5 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).premit(:content, :image).merge(user_id: current_user.id)
+  end
 end
