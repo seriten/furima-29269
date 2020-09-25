@@ -38,7 +38,7 @@ describe Item do
       end
 
       it "カテゴリーが--を示すid値（0）だと出品登録できない" do
-        @item.category_id = "0"
+        @item.category_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include("Categoryは0以外の値にしてください")
       end
@@ -51,7 +51,7 @@ describe Item do
       end
 
       it "商品状態が--を示すid値（0）だと出品登録できない" do
-        @item.status_id = "0"
+        @item.status_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include("Statusは0以外の値にしてください")
       end
@@ -64,7 +64,7 @@ describe Item do
       end
 
       it "配送料負担が--を示すid値（0）だと出品登録できない" do
-        @item.deliver_fee_id = "0"
+        @item.deliver_fee_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include("Deliver feeは0以外の値にしてください")
       end
@@ -78,7 +78,7 @@ describe Item do
       end
 
       it "発送元地域が--を示すid値（0）だと出品登録できない" do
-        @item.shop_from_id = "0"
+        @item.shop_from_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include("Shop fromは0以外の値にしてください")
 
@@ -93,7 +93,7 @@ describe Item do
       end
 
       it "発送までの日数が--を示すid値（0）だと出品登録できない" do
-        @item.lead_time_id = "0"
+        @item.lead_time_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include("Lead timeは0以外の値にしてください")
 
@@ -107,14 +107,14 @@ describe Item do
       end
 
       it "価格が299以下だと出品登録できないと" do
-        @item.price = "100"
+        @item.price = 100
         @item.valid?
         expect(@item.errors.full_messages).to include("Priceは299以上の値にしてください")
       end
 
 
       it "価格が10,000,000以上だと出品登録できない" do
-        @item.price = "99,999,999,999"
+        @item.price = 99,999,999,999
         @item.valid?
         expect(@item.errors.full_messages).to include("Priceは数値で入力してください")
       end
