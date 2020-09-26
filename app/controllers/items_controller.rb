@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    query = "SELECT * FROM items" 
+    @items = Item.find_by_sql(query)
   end
 
   def new
@@ -15,6 +16,10 @@ class ItemsController < ApplicationController
     else
       @item.valid?
       render :new
+    end
+
+    def show
+      @item = Item.find(params[:id, :image, :title, :price])
     end
     
   end
