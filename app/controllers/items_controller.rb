@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
-  end
+    @items = Item.includes(:user).order("created_at DESC")
+    end
 
   def new
     @item = Item.new
@@ -16,8 +16,11 @@ class ItemsController < ApplicationController
       @item.valid?
       render :new
     end
-    
   end
+
+    def show
+   @item = Item.find(params[:id])
+    end
 
   private
 

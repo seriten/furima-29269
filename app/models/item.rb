@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :genre
+  belongs_to_active_hash :category
   belongs_to_active_hash :deliver_fee
   belongs_to_active_hash :lead_time
   belongs_to_active_hash :shop_from
