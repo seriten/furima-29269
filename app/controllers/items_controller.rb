@@ -17,12 +17,11 @@ class ItemsController < ApplicationController
       @item.valid?
       render :new
     end
+  end
 
     def show
-      @item = Item.find(params[:id, :image, :title, :price])
+   @item = Item.find(params[:id])
     end
-    
-  end
 
   private
 
