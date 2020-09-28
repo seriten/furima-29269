@@ -45,7 +45,7 @@
 - belongs_to :user
 - belongs_to :item
 
-## buys　テーブル
+## buys テーブル
 
 | user_id  | int  | nill: false, foreign_key: true  |
 | item_id  | int  | nill: false, foreign_key: true  |
@@ -57,7 +57,7 @@
 - belongs_to :item
 - has_one :deliver
 
-## delivers　テーブル
+## delivers テーブル
 
 | postal_code   | string | nill: false                    |
 | prefecture_id | int    | nill: false                    |
